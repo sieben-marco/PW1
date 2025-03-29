@@ -8,15 +8,13 @@ public enum OperacoesMatematica {
     MULTIPLICACAO,
     DIVISAO;
 
-    public static void calcular(double a, double b) {
-        for (OperacoesMatematica operacao : OperacoesMatematica.values()) {
-            switch (operacao) {
-                case SOMA -> System.out.println(a + b);
-                case SUBTRACAO -> System.out.println(a - b);
-                case MULTIPLICACAO -> System.out.println(a * b);
-                case DIVISAO -> System.out.println(a / b);
-            }
-        }
+    public double calcular(double a, double b) {
+        return switch (this) {
+            case SOMA -> a + b;
+            case SUBTRACAO -> a - b;
+            case MULTIPLICACAO -> a * b;
+            case DIVISAO -> a / b;
+        };
     }
 
 //    SOMA {

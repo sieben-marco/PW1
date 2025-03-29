@@ -1,17 +1,20 @@
-package _2;
+package _5;
 
-public class TesteOperacoesMatematicas {
+public class TesteOperacao {
+
     public static void main(String[] args) {
-        double[] n = { 7, 2 };
 
-        for (OperacoesMatematica op : OperacoesMatematica.values()) {
+        double[] n = { 7, 0 };
+
+        for (Operacao op : Operacao.values()) {
             double resultado = op.calcular(n[0], n[1]);
             System.out.printf("%s: %.2f %c %.2f = %.2f%n",
                     op.name(), n[0], obterOp(op), n[1], resultado);
         }
+
     }
 
-    private static char obterOp(OperacoesMatematica op) {
+    private static char obterOp(Operacao op) {
         return switch (op) {
             case SOMA -> '+';
             case SUBTRACAO -> '-';
@@ -19,4 +22,5 @@ public class TesteOperacoesMatematicas {
             case DIVISAO -> '/';
         };
     }
+
 }
