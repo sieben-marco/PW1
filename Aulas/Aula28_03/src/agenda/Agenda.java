@@ -2,11 +2,12 @@ package agenda;
 
 import java.util.TreeSet;
 
+import pessoas.ComparatorNome;
 import pessoas.Pessoa;
 
-public class Agenda implements OperacoesAgenda<Pessoa> { 
+public class Agenda implements OperacoesAgenda<Pessoa> {
 	
-	private TreeSet<Pessoa> conjunto = new TreeSet<>();
+	private TreeSet<Pessoa> conjunto = new TreeSet<>(new ComparatorNome());
 	
 	@Override
 	public boolean cadastrar(Pessoa p) {
@@ -38,6 +39,5 @@ public class Agenda implements OperacoesAgenda<Pessoa> {
 	public boolean remover(Pessoa p) {
 		return this.conjunto.remove(p);
 	}
-	
-	
+
 }

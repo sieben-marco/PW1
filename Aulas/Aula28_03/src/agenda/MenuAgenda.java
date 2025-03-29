@@ -18,11 +18,10 @@ public class MenuAgenda {
 					criarPessoa(agenda);
 					break;
 				case 2:
-					agenda.listaTodos();
+					JOptionPane.showMessageDialog(null, agenda.listaTodos());
 					break;
 				case 3:
-					if (agenda.totalizar() == 0) System.out.println("Agenda vazia!");
-					else System.out.println("Total de contatos: " + agenda.totalizar());
+					totalPessoas(agenda);
 					break;
 				case 4:
 					// TODO: concluir
@@ -34,6 +33,18 @@ public class MenuAgenda {
 			}
 		} while (true);
 
+	}
+
+	/**
+	 * Verifica o total de pessoas
+	 *
+	 * @param agenda Conjunto de pessoas
+	 */
+	private static void totalPessoas(Agenda agenda) {
+		if (agenda.totalizar() == 0)
+			JOptionPane.showMessageDialog(null, "Agenda vazia!");
+		else
+			JOptionPane.showMessageDialog(null, "Total de contatos: " + agenda.totalizar());
 	}
 	
 	/**
