@@ -1,6 +1,9 @@
 package clientes;
 
+import contas.Conta;
 import documentos.Cpf;
+
+import java.util.List;
 
 public class Cliente {
 
@@ -8,6 +11,7 @@ public class Cliente {
 	
 	private String nome;
 	private Cpf cpf;
+	private List<Conta> contas;
 	
 	public Cliente() { this(null, null); }
 
@@ -37,9 +41,17 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	public List<Conta> getContas() {
+		return contas;
+	}
+
+	public void setContas(List<Conta> contas) {
+		this.contas = contas;
+	}
+
 	@Override
 	public String toString() {
-		return nome + cpf != null ? cpf.toString() : "Cpf inválido!";
+		return nome + cpf != null ? cpf.toString() : "Cpf inválido!" + this.contas;
 	}
 	
 }

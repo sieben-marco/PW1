@@ -5,7 +5,8 @@ public enum OpcoesMenu {
 	LISTAR_TOTAL_CLIENTES ("Listar o número total de clientes"),
 	PESQUISAR_NOME_CLIENTE ("Pesquisar cliente usando o nome"),
 	PESQUISAR_CPF_CLIENTE ("Pesquisar cliente usando o CPF"),
-	LISTAR_TODOS ("Listar todos os clientes");
+	LISTAR_TODOS ("Listar todos os clientes"),
+	SAIR ("Sair");
 	
 	String descricao;
 	

@@ -1,13 +1,15 @@
 package contas;
 
+import clientes.Cliente;
+
 public class ContaEspecial extends Conta {
 
 	private double limite;
 	
 	public ContaEspecial() {}
 
-	public ContaEspecial(double saldo, int numero, double limite) {
-		super(saldo, numero);
+	public ContaEspecial(double saldo, int numero, Cliente cliente, double limite) {
+		super(saldo, numero, cliente);
 		this.limite = limite;
 	}
 
@@ -21,7 +23,7 @@ public class ContaEspecial extends Conta {
 
 	@Override
 	public String toString() {
-		return "limite = " + limite;
+		return super.toString() + "limite = " + limite;
 	}
 	
 	@Override
