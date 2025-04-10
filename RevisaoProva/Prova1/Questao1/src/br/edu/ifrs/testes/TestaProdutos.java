@@ -4,16 +4,13 @@ import br.edu.ifrs.contatos.Endereco;
 import br.edu.ifrs.pessoas.Fornecedor;
 import br.edu.ifrs.produtos.Produto;
 
-import java.io.*;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class TestaProdutos {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Endereco end = new Endereco("Rua Alguma", "Lugar nenhum");
         List<Fornecedor> forns = new LinkedList<>(List.of(
@@ -33,3 +30,4 @@ public class TestaProdutos {
     }
 
 }
+
