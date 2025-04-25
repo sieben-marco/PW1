@@ -10,7 +10,7 @@ public class ExercicioTryComRecursos { // proprio java encerra os recursos
 			fw.write('2');
 			fw.write("2");
 		} catch (IOException e) {
-			System.out.println("Exceçãonaescrita!");
+			System.out.println("Exceção na escrita!");
 		}
 	}
 }

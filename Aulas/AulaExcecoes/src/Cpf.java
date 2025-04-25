@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public final class Cpf implements Comparable<Cpf> {
 	private long numero;
@@ -30,10 +31,35 @@ public final class Cpf implements Comparable<Cpf> {
 	public String toString() {
 		return this.numero + "-" + this.digito;
 	}
-	
+
+	@Override
 	public int compareTo(Cpf cpf) {
-		if (digito > cpf.getNumero()) return 1;
-		if (digito < cpf.getNumero()) return -1;
+		// compara o número
+		if (numero > cpf.getNumero()) return 1;
+		if (numero < cpf.getNumero()) return -1;
+		// compara o dígito
+		if (digito > cpf.getDigito()) return 1;
+		if (digito < cpf.getDigito()) return -1;
 		return 0;
+
+		// compara o número
+//		int compare = Long.compare(numero, cpf.getNumero());
+//		if (compare != 0) return compare;
+		// compara o dígito
+//		return Integer.compare(digito, cpf.getDigito());
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Cpf cpf = (Cpf)o;
+		return numero == cpf.numero && digito == cpf.digito;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numero, digito);
+	}
+
 }
