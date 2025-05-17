@@ -1,0 +1,26 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<!-- Unidade de Persistencia (conexão com o banco) -->
+	<persistence-unit name="testeJPA"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- Todas as classes que vão pro banco -->
+		<class>classes.Usuario</class>
+
+		<properties>
+			<!-- Qual banco vai usar (ip e porta) -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/jpa1" />
+			<!-- Usuario -->
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<!-- Senha -->
+			<property name="javax.persistence.jdbc.password" value="" />
+			<!-- Qual é o driver de conexão -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<!-- Apaga e cria tudo de novo (comentar quando funcionar) -->
+			<!-- <property name="javax.persistence.schema-generation.database.action" 
+				value="drop-and-create"/> -->
+		</properties>
+	</persistence-unit>
+</persistence>
